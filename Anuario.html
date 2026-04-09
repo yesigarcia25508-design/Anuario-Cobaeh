@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuario de Gala | COBAEH Plantel Zapotlán</title>
+    <style>
+        /* ESTÉTICA DE GALA: NEGRO Y DORADO */
+        :root {
+            --negro-profundo: #050505;
+            --negro-tarjeta: #121212;
+            --dorado-mate: #c5a028;
+            --dorado-brillante: #f9e29d;
+            --blanco-marfil: #f0f0f0;
+            --borde-dorado: 1px solid #d4af37;
+        }
+
+        body {
+            font-family: 'Garamond', serif;
+            background-color: var(--negro-profundo);
+            color: var(--blanco-marfil);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ENCABEZADO */
+        header {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('imagenes/portada.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 4px double var(--dorado-mate);
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--dorado-brillante);
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            background: var(--negro-tarjeta);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            border-bottom: var(--borde-dorado);
+        }
+
+        nav a {
+            color: var(--dorado-mate);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 8px var(--dorado-brillante);
+        }
+
+        /* SECCIONES */
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        .titulo-seccion {
+            text-align: center;
+            color: var(--dorado-brillante);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--dorado-mate);
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* TARJETAS DE ALUMNOS Y MAESTROS */
+        .grid-contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .tarjeta {
+            background: var(--negro-tarjeta);
+            border: var(--borde-dorado);
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.4s ease;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(197, 160, 40, 0.3);
+        }
+
+        /* ESPACIO PARA FOTOS */
+        .foto-espacio {
+            width: 100%;
+            height: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--dorado-mate);
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .foto-espacio img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tarjeta h3 { color: var(--dorado-brillante); margin: 10px 0; font-size: 1.4rem; }
+        .info-p { margin: 5px 0; font-size: 0.95rem; color: #ccc; }
+        .info-p strong { color: var(--dorado-mate); }
+
+        /* GALERÍA DE RECUERDOS */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .foto-recuerdo {
+            border: var(--borde-dorado);
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .foto-recuerdo img { width: 100%; height: 100%; object-fit: cover; }
+
+        footer {
+            background: black;
+            padding: 40px;
+            text-align: center;
+            border-top: var(--borde-dorado);
+            color: var(--dorado-mate);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <h1>COBAEH PLANTEL ZAPOTLÁN</h1>
+        <h2>Generación 2023-2026 | Grupo 6102</h2>
+        <p><i>"El éxito es la suma de pequeños esfuerzos repetidos día tras día"</i></p>
+    </header>
+
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#alumnos">Graduados</a>
+        <a href="#maestros">Docentes</a>
+        <a href="#recuerdos">Recuerdos</a>
+    </nav>
+
+    <section id="alumnos">
+        <h2 class="titulo-seccion">Nuestros Graduados</h2>
+        <div class="grid-contenedor">
+            
+            <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="erick.jpg" alt="Aparicio de Lucio Erick">
+                </div>
+                <h3>Erick Aparicio De Lucio</h3>
+                <p class="info-p"><strong>Carrera:</strong> Finanzas</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 2 de junio</p>
+                <p class="info-p"><strong>Meta:</strong> Ser millonario</p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="gerardo.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Gerardo Ismael Arteaga Chavez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Medicina</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 28 de septiembre</p>
+                <p class="info-p"><strong>Meta:</strong> Tener dinero</p>
+            </div>
+  
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="yasmin.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Yasmin Camargo Hernandez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Nutrición</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 15 de marzo</p>
+                <p class="info-p"><strong>Meta:</strong> Ser alguien en la vida</p>
+            </div>
+
+   <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="eduardo.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Jose Eduardo Cervates Ibarra</h3>
+                <p class="info-p"><strong>Carrera:</strong> Veterinaria</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 17 de junio</p>
+                <p class="info-p"><strong>Meta:</strong> Cumplir su carrera</p>
+            </div>
+
+   <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="ximena.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Nathaly Ximena Coria Rangel</h3>
+                <p class="info-p"><strong>Carrera:</strong> Enfermeria</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 22 de febrero</p>
+                <p class="info-p"><strong>Meta:</strong> Terminar la carrera</p>
+            </div>
+
+   <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="cynthia.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Cynthia Cruz Hernandez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Militar</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 4 de diciembre</p>
+                <p class="info-p"><strong>Meta:</strong> Tener una carrera</p>
+            </div>
+ 
+   <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="emmanuel.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Emmanuel De Lucio Granados</h3>
+                <p class="info-p"><strong>Carrera:</strong> Ingenieria Industrial</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 7 de abril</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="lisandro.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Lisandro Leonel Diaz Leon</h3>
+                <p class="info-p"><strong>Carrera:</strong> Gastronomia</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 28 de diciembre</p>
+                <p class="info-p"><strong>Meta:</strong> Viajar a E.U</p>
+            </div>
+ 
+<div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="zoe.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Zoe Abigail Ferreyra Meneses</h3>
+                <p class="info-p"><strong>Carrera:</strong> Idiomas</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 7 de abril</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="yesica.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Yesica Garcia Rojas</h3>
+                <p class="info-p"><strong>Carrera:</strong> Ingenieria Aeronautica</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 25 de mayo</p>
+                <p class="info-p"><strong>Meta:</strong> Estudiar biologia marina</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="irlanda.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Irlanda Adalery Garcia Vazquez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Idiomas</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 24 de marzo</p>
+                <p class="info-p"><strong>Meta:</strong> Tener una carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="juan.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Juan Jose Granados Trejo</h3>
+                <p class="info-p"><strong>Carrera:</strong> Nutrición</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 1 de diciembre</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="cesar.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Cesar Luis Hernandez Chavez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Mecanica</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 11 de mayo</p>
+                <p class="info-p"><strong>Meta:</strong> Tener un carro deportivo</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="brayan.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Brayan Yair Hernandez Soto</h3>
+                <p class="info-p"><strong>Carrera:</strong> Gastronomia</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 29 de septiembre</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="miriam.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Miriam Iturbide Martinez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Militar</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 4 de noviembre</p>
+                <p class="info-p"><strong>Meta:</strong> Ser militar</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="ian.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Ian Ramiro Lopez Simon</h3>
+                <p class="info-p"><strong>Carrera:</strong> Programación</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 28 de diciembre</p>
+                <p class="info-p"><strong>Meta:</strong> Tener una casa</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="aranza.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Aranza Lugardo Cortes</h3>
+                <p class="info-p"><strong>Carrera:</strong> Animación 2D</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 10 de mayo</p>
+                <p class="info-p"><strong>Meta:</strong> Tener una casa y un carro</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="dana.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Dana Alexandra Melendez Cureño</h3>
+                <p class="info-p"><strong>Carrera:</strong> Agronomia y fisioterapeuta</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 19 de octubre</p>
+                <p class="info-p"><strong>Meta:</strong> Conocer paises</p>
+            </div>
+ 
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="geraldine.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Geraldine Ximena Moreno Velazquez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Militar</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 5 de mayo</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="diana.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Diana Valentina Neri Santiago</h3>
+                <p class="info-p"><strong>Carrera:</strong> Enfermeria</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 12 de marzo</p>
+                <p class="info-p"><strong>Meta:</strong> Tener un carro</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="fernando.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Fernando Ochoa Pacheco</h3>
+                <p class="info-p"><strong>Carrera:</strong> Medicina</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 1 de octubre</p>
+                <p class="info-p"><strong>Meta:</strong> Ser medico</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="kelly.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Kelly Sarahi Olmedo Abasolo</h3>
+                <p class="info-p"><strong>Carrera:</strong> Mecanica</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 22 de diciembre</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="jose.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Jose de Jesus Osorio Gonzalez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Administración Empresarial</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 12 de febrero</p>
+                <p class="info-p"><strong>Meta:</strong> Tener una casa</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="dafne.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Dafne Citlali Perez Francisco</h3>
+                <p class="info-p"><strong>Carrera:</strong> Psicologia</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 18 de marzo</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="menchaca.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Luis Gerardo Pineda Cruz</h3>
+                <p class="info-p"><strong>Carrera:</strong> Ingenieria Ferroviaria</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 5 de agosto</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="marvin.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Marvin Imanol Pineda Rosales</h3>
+                <p class="info-p"><strong>Carrera:</strong> Mecanica</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 30 de junio</p>
+                <p class="info-p"><strong>Meta:</strong> Ser alguien en la vida</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="jehieli.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Jehieli Pineda Santiago</h3>
+                <p class="info-p"><strong>Carrera:</strong> Derecho</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 7 de abril</p>
+                <p class="info-p"><strong>Meta:</strong> Ser virtuosa</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="asdrubal.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Asdrubal Rodriguez Evia</h3>
+                <p class="info-p"><strong>Carrera:</strong> Finanzas</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 18 de mayo</p>
+                <p class="info-p"><strong>Meta:</strong> Ser alguien en la vida</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="carlos.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Carlos Valentin Santiago Flores</h3>
+                <p class="info-p"><strong>Carrera:</strong> Mecanica</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 9 de septiembre</p>
+                <p class="info-p"><strong>Meta:</strong> Acabar su carrera</p>
+            </div>
+
+ <div class="tarjeta">
+                <div class="foto-espacio">
+                    <img src="elizabeth.jpg" alt="Nombre Alumno">
+                </div>
+                <h3>Eizabeth Vargas Hernandez</h3>
+                <p class="info-p"><strong>Carrera:</strong> Militar</p>
+                <p class="info-p"><strong>Cumpleaños:</strong> 14 de mayo</p>
+                <p class="info-p"><strong>Meta:</strong> Tener dinero</p>
+            </div>
+
+       </div>
+    </section>
+
+    <section id="maestros" style="background: #080808;">
+        <h2 class="titulo-seccion">Claustro Docente</h2>
+        <div class="grid-contenedor">
+            
+            <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="mario.jpg" alt="Mario Martinez">
+                </div>
+                <h3>Mario Martinez Martinez</h3>
+                <p class="info-p"><strong>Materia:</strong> Matemáticas</p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="augusto.jpg" alt="José Augusto">
+                </div>
+                <h3>José Augusto Hernández</h3>
+                <p class="info-p"><strong>Materia:</strong> Orientación y Humanidades</p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="rafael.jpg" alt="Rafael Arista">
+                </div>
+                <h3>Rafael Arista Melgajero</h3>
+                <p class="info-p"><strong>Materia:</strong> Derecho y Economía</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="roberto.jpg" alt="Robrto Alonso">
+                </div>
+                <h3>Roberto Alonso Rodriguez Juarez</h3>
+                <p class="info-p"><strong>Materia:</strong> Capacitación para el trabajo</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="antonio.jpg" alt="Antonio Sosa">
+                </div>
+                <h3>Antonio Sosa Hurtado</h3>
+                <p class="info-p"><strong>Materia:</strong> Energía</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="rocio.jpg" alt="Rocio Ramirez">
+                </div>
+                <h3>Rocio Ramirez Rodriguez</h3>
+                <p class="info-p"><strong>Materia:</strong> Literatura</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="arminda.jpg" alt=Arminda Dorantes">
+                </div>
+                <h3>Arminda Dorantes Fuentes</h3>
+                <p class="info-p"><strong>Materia:</strong> Conciencia Historica</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="martha.jpg" alt="Martha Monroy">
+                </div>
+                <h3>Martha Monroy Basilio</h3>
+                <p class="info-p"><strong>Materia:</strong> Biología</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="vianey.jpg" alt="Vianey Reynoso">
+                </div>
+                <h3>Vianey Reynoso Andablo</h3>
+                <p class="info-p"><strong>Materia:</strong> Capacitación para el trabajo</p>
+            </div>
+
+  <div class="tarjeta">
+                <div class="foto-espacio" style="height: 250px;">
+                    <img src="angelina.jpg" alt="Angelina Ortega">
+                </div>
+                <h3>Angelina Ortega Trejo</h3>
+                <p class="info-p"><strong>Materia:</strong> Inglés</p>
+            </div>
+
+
+
+
+
+            </div>
+    </section>
+
+    <section id="recuerdos">
+        <h2 class="titulo-seccion">Galería de Recuerdos</h2>
+        <div class="galeria">
+            <div class="foto-recuerdo"><img src="grupal1.jpg" alt="Momento 1"></div>
+            <div class="foto-recuerdo"><img src="grupal7.jpg" alt="Momento 2"></div>
+            <div class="foto-recuerdo"><img src="grupal8.jpg" alt="Momento 3"></div>
+            <div class="foto-recuerdo"><img src="grupal9.jpg" alt="Momento 4"></div>
+            <div class="foto-recuerdo"><img src="grupal10.jpg" alt="Momento 5"></div>
+            <div class="foto-recuerdo"><img src="grupal6.jpg" alt="Momento 6"></div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <p>"Guardamos en estas imágenes los mejores años de nuestra juventud."</p>
+        </div>
+<h2 class="titulo-seccion"
+style="front-size:1.8rem;margin-top:
+40px;">Video de generación</h2>
+<div class="contenedor-video">
+<video controls>
+<source src="grupo1.mp4" type="video/mp4">
+<h2 class="titulo-seccion"
+style="front-size:1.8rem;margin-top:
+40px;">Video de generación</h2>
+<div class="contenedor-video">
+<video controls>
+<source src="grupo1.mp4" type="video/mp4">
+
+
+    
+</section>
+<div style="text-align: center; margin-top: 30px;">
+            <p>"En este video fueron captados uno de los mejores momentos de nuestra prepa, esto no es un adiós, si no un hasta pronto."</p>
+        </div>
+
+    <footer>
+        <p><strong>COBAEH Plantel Zapotlán</strong></p>
+        <p>Proyecto: Anuario Digital | Elaborado por: [Yesica Garcia Rojas]</p>
+        <p>Sexto Semestre - Grupo 6102</p>
+    </footer>
+
+</body>
+</html>
